@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -361,4 +362,763 @@
     font-size: 12px; font-weight: 500;
     padding: 7px 18px;
     border-radius: 2px;
-    border:
+    border: 1px solid var(--gray-light);
+    background: var(--white);
+    color: var(--gray-text);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+  .uc-tab.active, .uc-tab:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+  .uc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 56px;
+  }
+  .uc-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 28px 24px;
+    transition: all 0.2s;
+  }
+  .uc-card:hover {
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+  }
+  .uc-card.hidden { display: none; }
+  .uc-ind {
+    font-size: 10px; font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 14px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.06em;
+  }
+  .ind-mfg { background: #E6F1FB; color: #185FA5; }
+  .ind-infra { background: #EAF3DE; color: #3B6D11; }
+  .ind-energy { background: #FAEEDA; color: #854F0B; }
+  .ind-food { background: #FBEAF0; color: #993556; }
+  .uc-equip {
+    font-size: 15px; font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .uc-scene {
+    font-size: 13px; line-height: 1.8;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 14px;
+  }
+  .uc-tip {
+    font-size: 12px;
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Flow */
+  .flow-wrap {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 40px;
+  }
+  .flow-title {
+    font-size: 15px; font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 28px;
+  }
+  .flow {
+    display: flex; align-items: stretch; gap: 0;
+    overflow-x: auto;
+  }
+  .flow-step {
+    flex: 1; min-width: 140px;
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    padding: 0 16px;
+    border-right: 1px dashed var(--gray-light);
+    position: relative;
+  }
+  .flow-step:last-child { border-right: none; }
+  .flow-num {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+  }
+  .flow-text {
+    font-size: 13px; font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  /* ── SPEC ── */
+  #spec { background: var(--white); }
+  .spec-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .spec-block {
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .spec-block-head {
+    background: var(--navy);
+    padding: 16px 24px;
+    font-size: 13px; font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    font-family: 'DM Mono', monospace;
+  }
+  table.spec-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px;
+  }
+  table.spec-table tr { border-bottom: 1px solid var(--gray-light); }
+  table.spec-table tr:last-child { border-bottom: none; }
+  table.spec-table td {
+    padding: 12px 24px;
+    vertical-align: middle;
+  }
+  table.spec-table td:first-child {
+    color: var(--gray-text);
+    font-weight: 400;
+    width: 45%;
+  }
+  table.spec-table td:last-child {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  table.spec-table tr:nth-child(even) td { background: #fafbfc; }
+  .spec-note {
+    font-size: 11px; color: var(--gray-mid);
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── EVAL SET ── */
+  #evalset { background: var(--off-white); }
+  .eval-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 8px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .eval-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    color: var(--accent);
+    border: 1px solid var(--accent-border);
+    background: var(--accent-dim);
+    padding: 4px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .eval-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  .eval-desc {
+    font-size: 14px; line-height: 1.9;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .eval-items { display: flex; flex-direction: column; gap: 10px; }
+  .eval-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13px; color: var(--text-primary); font-weight: 400;
+  }
+  .eval-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    margin-top: 6px; flex-shrink: 0;
+  }
+  .eval-visual {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 36px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .eval-spec-row {
+    display: flex; justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding-bottom: 12px;
+  }
+  .eval-spec-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .eval-spec-k { font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 300; }
+  .eval-spec-v { font-size: 13px; font-weight: 500; color: var(--white); font-family: 'DM Mono', monospace; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); }
+  #contact .section-title { color: var(--white); }
+  #contact .section-lead { color: rgba(255,255,255,0.55); margin-bottom: 40px; }
+  .contact-form {
+    max-width: 600px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-label {
+    font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.04em;
+    font-family: 'DM Mono', monospace;
+  }
+  .form-label span { color: var(--accent); margin-left: 3px; }
+  .form-input, .form-textarea, .form-select {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--white);
+    font-family: 'Noto Sans JP', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+  .form-input:focus, .form-textarea:focus, .form-select:focus {
+    border-color: var(--accent);
+  }
+  .form-select option { background: var(--navy); color: var(--white); }
+  .form-textarea { resize: vertical; min-height: 120px; }
+  .form-submit {
+    background: var(--accent);
+    color: var(--navy);
+    font-size: 15px; font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s, transform 0.2s;
+    align-self: flex-start;
+  }
+  .form-submit:hover { opacity: 0.88; transform: translateY(-1px); }
+  .form-note {
+    font-size: 11px; color: rgba(255,255,255,0.35);
+    margin-top: 4px; font-family: 'DM Mono', monospace;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #07111F;
+    padding: 40px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px; font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.06em;
+  }
+  .footer-addr {
+    font-size: 11px; color: rgba(255,255,255,0.3);
+    font-family: 'DM Mono', monospace;
+    text-align: right;
+  }
+  .footer-note {
+    font-size: 10px; color: rgba(255,255,255,0.2);
+    text-align: center; width: 100%;
+    font-family: 'DM Mono', monospace;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav .nav-links { display: none; }
+    .hero-spec-row { flex-wrap: wrap; gap: 20px; }
+    .shape-layout, .spec-layout, .eval-card { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; gap: 20px; }
+    .flow-step { border-right: none; border-bottom: 1px dashed var(--gray-light); padding-bottom: 20px; }
+    .flow-step:last-child { border-bottom: none; padding-bottom: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="nav-logo-dot"></span>
+    Robosensor
+  </div>
+  <ul class="nav-links">
+    <li><a href="#features">特長</a></li>
+    <li><a href="#shape">ラインアップ</a></li>
+    <li><a href="#usecases">導入事例</a></li>
+    <li><a href="#spec">仕様</a></li>
+    <li><a href="#evalset">評価セット</a></li>
+    <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Robosensor® Preamplifier Built-in</div>
+    <h1 class="hero-h1">電線が、<em>センサー</em>になる。<br>設備の"声"を、精密に捉える。</h1>
+    <p class="hero-sub">外径わずか約0.5mmのワイヤー型ピエゾセンサー。プリアンプ内蔵で、従来センサーでは届かなかった複雑な形状の設備・配管・回転体にも自在に取り付け可能。30Hz〜40KHzの広帯域・低ノイズ検出で、異常振動を早期に発見します。</p>
+    <div class="hero-badges">
+      <span class="hero-badge">外径 φ0.5mm</span>
+      <span class="hero-badge">30Hz ~ 40KHz</span>
+      <span class="hero-badge">プリアンプ内蔵</span>
+      <span class="hero-badge">SPS / SPL 2タイプ</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">資料請求・お問い合わせ</a>
+      <a href="#evalset" class="btn-outline">評価セットを見る</a>
+    </div>
+  </div>
+  <div class="hero-spec-row">
+    <div class="spec-item">
+      <span class="spec-val">φ 0.5mm</span>
+      <span class="spec-label">外径（細径ワイヤー型）</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-val">30Hz–40KHz</span>
+      <span class="spec-label">広帯域周波数特性</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-val">20–500x</span>
+      <span class="spec-label">増幅倍率（GAIN）</span>
+    </div>
+    <div class="spec-item">
+      <span class="spec-val">0–5V</span>
+      <span class="spec-label">アナログ出力</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="inner">
+    <div class="section-eyebrow reveal">こんなお悩みはありませんか</div>
+    <h2 class="section-title reveal">設備管理の現場が直面する課題</h2>
+    <div class="problem-grid reveal">
+      <div class="problem-card">
+        <div class="problem-q">PROBLEM 01</div>
+        <div class="problem-text">設備の形状が複雑で、従来センサーでは取り付けられない箇所がある</div>
+        <div class="problem-bar"></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-q">PROBLEM 02</div>
+        <div class="problem-text">初期の微細な振動変化を見逃し、突発的な故障で生産ラインが停止してしまった</div>
+        <div class="problem-bar"></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-q">PROBLEM 03</div>
+        <div class="problem-text">センサー設置のたびに専門工事が必要で、コストと時間がかかりすぎる</div>
+        <div class="problem-bar"></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-q">PROBLEM 04</div>
+        <div class="problem-text">既存センサーでは感度が不足し、初期異常の早期検知ができない</div>
+        <div class="problem-bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="inner">
+    <div class="section-eyebrow reveal">Why Robosensor</div>
+    <h2 class="section-title reveal">ロボセンサー®が選ばれる理由</h2>
+    <p class="section-lead reveal">ピエゾフィルムを芯線に巻き付けた独自構造により、従来センサーの常識を超えた取り付け自由度と高精度検出を両立しています。</p>
+    <div class="feat-grid">
+      <div class="feat-card highlight reveal reveal-delay-1">
+        <div class="feat-num">POINT 01</div>
+        <div class="feat-title">外径約0.5mm — 業界最細水準のワイヤー型</div>
+        <div class="feat-desc">細くしなやかなワイヤー形状で、曲面・狭小部・配管まわりへの設置が簡単。後付けも容易で、既存設備へ最小限の工事で導入できます。</div>
+      </div>
+      <div class="feat-card highlight reveal reveal-delay-2">
+        <div class="feat-num">POINT 02</div>
+        <div class="feat-title">電線自身がセンサー — 独自のセンシング設計</div>
+        <div class="feat-desc">センサーケーブル自体が振動を直接検出する革新的な設計。接触面の振動を正確にセンシングし、従来センサーとは根本的に異なる取り付け自由度を実現。</div>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-num">POINT 03</div>
+        <div class="feat-title">広帯域・低ノイズ — 30Hz〜40KHzの高精度検出</div>
+        <div class="feat-desc">広い周波数帯域で微細な振動変化も逃さず検出。初期異常の早期発見により、突発的なダウンタイムを大幅に削減します。</div>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-num">POINT 04</div>
+        <div class="feat-title">プリアンプ内蔵 — 接続するだけで即計測</div>
+        <div class="feat-desc">センサーケーブルにプリアンプを内蔵。電源アンプ（ASU001A）にMicroUSBで接続するだけで、複雑な設定不要ですぐに振動計測を開始できます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHAPE -->
+<section id="shape">
+  <div class="inner">
+    <div class="section-eyebrow reveal" style="color:var(--accent);">Lineup</div>
+    <h2 class="section-title reveal">2つのラインアップから選べる</h2>
+    <p class="section-lead reveal">設置環境や計測対象に合わせて、ストレート型・ループ型の2種類からお選びください。</p>
+    <div class="shape-layout">
+      <div class="shape-type reveal reveal-delay-1">
+        <div class="shape-tag">SPS</div>
+        <div class="shape-name">ストレート型</div>
+        <div class="shape-desc">直線状のワイヤーを配管・シャフト等の長手方向に沿わせて設置。終端部あり。直線的な設備・長尺部材の振動検出に最適です。</div>
+        <div class="shape-svg-wrap">
+          <svg width="200" height="48" viewBox="0 0 200 48" fill="none">
+            <rect x="10" y="22" width="20" height="4" rx="2" fill="rgba(0,201,141,0.4)"/>
+            <line x1="30" y1="24" x2="160" y2="24" stroke="#00C98D" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="163" cy="24" r="4" fill="rgba(0,201,141,0.3)" stroke="#00C98D" stroke-width="1.5"/>
+            <rect x="168" y="19" width="22" height="10" rx="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <text x="100" y="44" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.4)" font-family="DM Mono, monospace">センサー 30cm + ケーブル 1m</text>
+          </svg>
+        </div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.4); font-family:'DM Mono',monospace; margin-top:4px;">標準サイズ：センサー 30cm ＋ ケーブル 1m</div>
+      </div>
+      <div class="shape-type reveal reveal-delay-2">
+        <div class="shape-tag">SPL</div>
+        <div class="shape-name">ループ型</div>
+        <div class="shape-desc">ループ状のワイヤーで円筒体・回転体を囲むように設置。回転軸・ポンプ・モーターなど、丸みのある設備の全周振動検出に最適です。</div>
+        <div class="shape-svg-wrap">
+          <svg width="200" height="60" viewBox="0 0 200 60" fill="none">
+            <rect x="10" y="28" width="20" height="4" rx="2" fill="rgba(0,201,141,0.4)"/>
+            <line x1="30" y1="30" x2="60" y2="30" stroke="#00C98D" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M60 30 Q70 8 95 8 Q120 8 130 30 Q120 52 95 52 Q70 52 60 30Z" stroke="#00C98D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <line x1="130" y1="30" x2="165" y2="30" stroke="#00C98D" stroke-width="2.5" stroke-linecap="round"/>
+            <rect x="165" y="25" width="22" height="10" rx="3" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <text x="95" y="56" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.4)" font-family="DM Mono, monospace">センサー 30cm</text>
+          </svg>
+        </div>
+        <div style="font-size:12px; color:rgba(255,255,255,0.4); font-family:'DM Mono',monospace; margin-top:4px;">標準サイズ：センサー 30cm ＋ ケーブル 1m</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section id="usecases">
+  <div class="inner">
+    <div class="section-eyebrow reveal">Use Cases</div>
+    <h2 class="section-title reveal">さまざまな現場で活躍</h2>
+    <p class="section-lead reveal">製造業・インフラ・エネルギーなど、幅広い業種の設備異常検知に導入されています。</p>
+
+    <div class="uc-filter reveal">
+      <button class="uc-tab active" onclick="filterUC('all',this)">すべての業種</button>
+      <button class="uc-tab" onclick="filterUC('mfg',this)">製造業</button>
+      <button class="uc-tab" onclick="filterUC('infra',this)">インフラ・建設</button>
+      <button class="uc-tab" onclick="filterUC('energy',this)">エネルギー</button>
+      <button class="uc-tab" onclick="filterUC('food',this)">食品・医薬</button>
+    </div>
+
+    <div class="uc-grid reveal" id="uc-grid">
+      <div class="uc-card" data-ind="mfg">
+        <span class="uc-ind ind-mfg">製造業</span>
+        <div class="uc-equip">工作機械・CNCスピンドル</div>
+        <div class="uc-scene">スピンドル外周や細径部にワイヤーを巻き付けて設置。切削時の異常振動を早期検出し、工具折損・加工不良を防止。</div>
+        <div class="uc-tip">→ SPS をシャフトに沿わせるか SPL で軸を囲む</div>
+      </div>
+      <div class="uc-card" data-ind="mfg">
+        <span class="uc-ind ind-mfg">製造業</span>
+        <div class="uc-equip">搬送ライン・コンベア</div>
+        <div class="uc-scene">ローラー・チェーン駆動部の振動をリアルタイムで常時モニタリング。ベアリング劣化の兆候を早期検知し、計画外停止ゼロを実現。</div>
+        <div class="uc-tip">→ ローラー軸受け部に SPL を巻き付けて設置</div>
+      </div>
+      <div class="uc-card" data-ind="mfg">
+        <span class="uc-ind ind-mfg">製造業</span>
+        <div class="uc-equip">産業用ロボット関節部</div>
+        <div class="uc-scene">アーム関節の微細な振動を検知し、減速機の摩耗・ギアバックラッシュ増大を早期把握。メンテナンスサイクルの最適化に貢献。</div>
+        <div class="uc-tip">→ 関節周囲の狭小部にワイヤーを沿わせるだけ</div>
+      </div>
+      <div class="uc-card" data-ind="infra">
+        <span class="uc-ind ind-infra">インフラ・建設</span>
+        <div class="uc-equip">配管・ポンプ設備</div>
+        <div class="uc-scene">複雑な配管系に沿わせて設置し、異常振動・ウォーターハンマーを検知。漏水・破損の予兆を早期に察知します。</div>
+        <div class="uc-tip">→ 配管外周に SPS を巻き付け、接着・結束で固定</div>
+      </div>
+      <div class="uc-card" data-ind="infra">
+        <span class="uc-ind ind-infra">インフラ・建設</span>
+        <div class="uc-equip">橋梁・構造物モニタリング</div>
+        <div class="uc-scene">橋梁や構造物の微細な振動・共振周波数の変化を長期モニタリング。損傷・劣化の進行を非破壊で把握し、維持管理に活用。</div>
+        <div class="uc-tip">→ 曲面・鋼材に沿ってワイヤーを貼り付け</div>
+      </div>
+      <div class="uc-card" data-ind="energy">
+        <span class="uc-ind ind-energy">エネルギー</span>
+        <div class="uc-equip">発電機・タービン</div>
+        <div class="uc-scene">高温・高振動環境下の回転体に設置し、不平衡・軸ずれ・ブレード疲労亀裂を早期検出。稼働率の最大化に貢献します。</div>
+        <div class="uc-tip">→ SPL で回転軸まわりを囲み固定</div>
+      </div>
+      <div class="uc-card" data-ind="energy">
+        <span class="uc-ind ind-energy">エネルギー</span>
+        <div class="uc-equip">風力発電設備</div>
+        <div class="uc-scene">ナセル内部の増速機・発電機軸受けに設置。常時モニタリングで高所作業を伴う点検コストを大幅に削減。</div>
+        <div class="uc-tip">→ 軸受けハウジング周囲に沿わせて設置</div>
+      </div>
+      <div class="uc-card" data-ind="food">
+        <span class="uc-ind ind-food">食品・医薬</span>
+        <div class="uc-equip">充填機・包装機械</div>
+        <div class="uc-scene">クリーンルーム内でも、細くコンパクトなワイヤーで目立たず設置。シール不良・充填量ばらつきにつながる機械振動の変化を常時監視。</div>
+        <div class="uc-tip">→ 駆動部に SPS を密着・固定するだけ</div>
+      </div>
+    </div>
+
+    <div class="flow-wrap reveal">
+      <div class="flow-title">導入から計測までの流れ</div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">01</div>
+          <div class="flow-text">センサーを<br>設備に取り付け</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">02</div>
+          <div class="flow-text">MicroUSBで<br>ASU001Aに接続</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">03</div>
+          <div class="flow-text">BNCケーブルで<br>計測器へ出力</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">04</div>
+          <div class="flow-text">オシロスコープ等で<br>リアルタイム計測</div>
+        </div>
+      </div>
+      <div style="font-size:11px; color:var(--gray-mid); margin-top:16px; font-family:'DM Mono',monospace;">※ 計測器はお客様にてご準備ください。評価セット（RDEM005）で試験導入も可能です。</div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEC -->
+<section id="spec">
+  <div class="inner">
+    <div class="section-eyebrow reveal">Specifications</div>
+    <h2 class="section-title reveal">製品仕様</h2>
+    <div class="spec-layout reveal">
+      <div class="spec-block">
+        <div class="spec-block-head">ロボセンサー SPS / SPL</div>
+        <table class="spec-table">
+          <tr><td>センサータイプ</td><td>ワイヤー状ピエゾセンサー（プリアンプ内蔵）</td></tr>
+          <tr><td>外径</td><td>約 0.5mm</td></tr>
+          <tr><td>センサー長</td><td>30cm ＋ 延長ケーブル 1m</td></tr>
+          <tr><td>接続端子</td><td>MicroUSB プラグ</td></tr>
+          <tr><td>形状バリエーション</td><td>SPS（ストレート型） / SPL（ループ型）</td></tr>
+        </table>
+      </div>
+      <div class="spec-block">
+        <div class="spec-block-head">電源アンプ ASU001A</div>
+        <table class="spec-table">
+          <tr><td>GAIN（増幅倍率）</td><td>20〜500倍（可変ボリューム）</td></tr>
+          <tr><td>入力</td><td>MicroUSB（ロボセンサー入力）</td></tr>
+          <tr><td>出力</td><td>Φ2.5 ステレオミニジャック（0〜5V）</td></tr>
+          <tr><td>周波数特性</td><td>30Hz〜40KHz</td></tr>
+          <tr><td>サイズ / 重量</td><td>W87×D69×H34mm / 200g</td></tr>
+          <tr><td>電源</td><td>AC アダプター DC12V（付属）</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="spec-note reveal">※ 記載内容は予告なく変更される場合があります。</p>
+  </div>
+</section>
+
+<!-- EVAL SET -->
+<section id="evalset">
+  <div class="inner">
+    <div class="section-eyebrow reveal">Evaluation Kit</div>
+    <h2 class="section-title reveal">まずは評価セットで試せる</h2>
+    <div class="eval-card reveal">
+      <div>
+        <div class="eval-tag">RDEM005 — 標準評価セット ver2</div>
+        <div class="eval-title">ロボセンサー®を<br>すぐに評価できるセット</div>
+        <div class="eval-desc">電源アンプと共にご提供する評価用セット。センサー・アンプ・ケーブル・電源がすべて揃っており、届いたその日から振動計測を開始できます。導入前の動作確認・比較評価に最適です。</div>
+        <div class="eval-items">
+          <div class="eval-item"><div class="eval-dot"></div><span>ロボセンサー® SPS または SPL（選択）</span></div>
+          <div class="eval-item"><div class="eval-dot"></div><span>電源アンプ ASU001A</span></div>
+          <div class="eval-item"><div class="eval-dot"></div><span>BNC出力ケーブル（1m）</span></div>
+          <div class="eval-item"><div class="eval-dot"></div><span>AC アダプター（DC12V）</span></div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="#contact" class="btn-primary">評価セットについて問い合わせる</a>
+        </div>
+      </div>
+      <div class="eval-visual">
+        <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent); letter-spacing:0.1em; margin-bottom:8px;">RDEM005 SPECS</div>
+        <div class="eval-spec-row"><span class="eval-spec-k">型番</span><span class="eval-spec-v">RDEM005</span></div>
+        <div class="eval-spec-row"><span class="eval-spec-k">センサー形状</span><span class="eval-spec-v">SPS または SPL（選択）</span></div>
+        <div class="eval-spec-row"><span class="eval-spec-k">GAIN</span><span class="eval-spec-v">20〜500倍</span></div>
+        <div class="eval-spec-row"><span class="eval-spec-k">周波数特性</span><span class="eval-spec-v">30Hz〜40KHz</span></div>
+        <div class="eval-spec-row"><span class="eval-spec-k">出力</span><span class="eval-spec-v">0〜5V アナログ</span></div>
+        <div class="eval-spec-row"><span class="eval-spec-k">付属ケーブル</span><span class="eval-spec-v">BNCプラグ 1m</span></div>
+        <div class="eval-spec-row"><span class="eval-spec-k">センサー長変更</span><span class="eval-spec-v">別途見積</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="inner">
+    <div class="section-eyebrow reveal" style="color:var(--accent);">Contact</div>
+    <h2 class="section-title reveal">お問い合わせ・資料請求</h2>
+    <p class="section-lead reveal">導入事例・仕様の詳細・評価セットについて、お気軽にお問い合わせください。専門スタッフが丁寧にご対応いたします。</p>
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">会社名<span>*</span></label>
+          <input class="form-input" type="text" placeholder="株式会社〇〇" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">お名前<span>*</span></label>
+          <input class="form-input" type="text" placeholder="山田 太郎" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">メールアドレス<span>*</span></label>
+          <input class="form-input" type="email" placeholder="your@company.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">電話番号</label>
+          <input class="form-input" type="tel" placeholder="053-xxx-xxxx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">お問い合わせ種別<span>*</span></label>
+        <select class="form-select" required>
+          <option value="" disabled selected>選択してください</option>
+          <option>資料請求</option>
+          <option>評価セット（RDEM005）について</option>
+          <option>仕様・スペックについて</option>
+          <option>導入・取り付けのご相談</option>
+          <option>価格・見積もり</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">お問い合わせ内容</label>
+        <textarea class="form-textarea" placeholder="設置環境や用途など、詳しい内容をご記入ください"></textarea>
+      </div>
+      <button type="submit" class="form-submit">送信する</button>
+      <div class="form-note">※ このフォームはデモ用です。実際の送信機能は実装時に設定してください。</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">ROBOSENSOR GIKEN Co., Ltd.</div>
+  <div class="footer-addr">
+    〒433-8105 静岡県浜松市北区三方原町1064-10<br>
+    ロボセンサー技研株式会社
+  </div>
+  <div class="footer-note">© Robosensor Giken Co., Ltd. All rights reserved. ※記載内容は予告なく変更される場合があります。</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Hero stagger
+  document.querySelectorAll('.hero-content > *').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transitionDelay = (i * 0.1) + 's';
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    }, 100 + i * 100);
+  });
+
+  // Use case filter
+  function filterUC(ind, btn) {
+    document.querySelectorAll('.uc-card').forEach(c => {
+      c.classList.toggle('hidden', ind !== 'all' && c.dataset.ind !== ind);
+    });
+    document.querySelectorAll('.uc-tab').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+  }
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '送信しました ✓';
+    btn.style.background = 'rgba(0,201,141,0.3)';
+    btn.style.color = 'var(--accent)';
+    btn.disabled = true;
+  }
+
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) current = s.id;
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'rgba(255,255,255,1)'
+        : 'rgba(255,255,255,0.65)';
+    });
+  });
+</script>
+</body>
+</html>
